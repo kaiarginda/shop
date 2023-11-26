@@ -63,13 +63,11 @@ const AddToCart = (user) => {
   };
 
   // Calculate checkout price using useEffect to avoid multiple re-renders
-  useEffect(() => {
-    const totalPrice = checkoutData.reduce(
-      (total, product) => total + product.totalPrice,
-      0
-    );
-    setCheckoutPrice(totalPrice);
-  }, [checkoutData]);
+  const totalPrice = checkoutData.reduce(
+    (total, product) => total + product.totalPrice,
+    0
+  );
+  setCheckoutPrice(totalPrice);
 
   const handleSubscription = (e) => {
     e.preventDefault();
