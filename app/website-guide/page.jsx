@@ -24,7 +24,6 @@
 // };
 
 // export default Page;
-
 import React from "react";
 import Link from "next/link";
 
@@ -37,11 +36,12 @@ const Page = () => {
           {" "}
           This is the best Shopping Website in the world. Of course, it is
           &quot;Gldanis Bazroba&quot;. You can register by clicking
-          register/login. You can comment and reply on other people's comments
-          in the individual products link. You can also add products to the cart
-          and then make payment. Of course, the website is not real, and don't
-          make real payments. You can add a product by clicking on your user
-          icon and filling up the form. You will understand the rest...
+          register/login. You can comment and reply on other people&apos;s
+          comments in the individual products link. You can also add products to
+          the cart and then make payment. Of course, the website is not real,
+          and don&apos;t make real payments. You can add a product by clicking
+          on your user icon and filling up the form. You will understand the
+          rest...
         </p>
       </div>
       <div className="flex justify-center items-center">
