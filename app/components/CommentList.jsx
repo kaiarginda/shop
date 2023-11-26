@@ -27,6 +27,7 @@ const CommentList = async ({ productId }) => {
         }
         return (
           <IndividualComment
+            key={comment._id} // Use comment._id as the key
             comment={comment}
             parentId={comment._id}
             productId={productId}
