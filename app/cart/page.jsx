@@ -81,13 +81,9 @@ import { cookies } from "next/headers";
 import { verify } from "jsonwebtoken";
 import AddToCart from "../components/AddToCart";
 const page = () => {
-  const cookieStore = cookies();
-  const token = cookieStore.get("OutSideJWT");
-
-  const user = verify(token.value, "secret");
   return (
     <div>
-      <AddToCart user={user} />
+      <AddToCart user={{}} />
     </div>
   );
 
