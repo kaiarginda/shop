@@ -6,6 +6,7 @@ export const connectMongoDB = async () => {
   mongoose
     .connect(DB, {
       useNewUrlParser: true,
+      connectTimeoutMS: 30000, // 30 seconds
     })
     .then(() => console.log("DB connnection successful!"));
 };
