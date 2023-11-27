@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import React from "react";
 import { useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
@@ -204,9 +203,9 @@ const Register = () => {
         </form>
         <p className="mt-4">
           Already have an account?{" "}
-          <Link href="/login" className="text-blue-500">
+          <a href="/login" className="text-blue-500">
             Log In here
-          </Link>
+          </a>
         </p>
       </div>
     </div>

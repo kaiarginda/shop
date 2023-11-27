@@ -6,7 +6,6 @@ import { verify } from "jsonwebtoken";
 import UserProducts from "../../components/UserProducts";
 import { cookies } from "next/headers";
 import Product from "@/app/models/Product";
-import Link from "next/link";
 const Page = async ({ params }) => {
   const { username } = params;
   const user = await User.findOne({ username });
@@ -39,7 +38,7 @@ const Page = async ({ params }) => {
       <UserProducts products={products} loggedUser={loggedUser} user={user} />
       <div className="flex items-center justify-center mt-5">
         {" "}
-        <Link href={"/dashboard"}>Go Back To Dashboard</Link>
+        <a href={"/dashboard"}>Go Back To Dashboard</a>
       </div>
     </div>
   );

@@ -63,7 +63,6 @@
 import React from "react";
 import Payment from "../../../../models/Payment";
 import Product from "../../../../models/Product";
-import Link from "next/link";
 import mongoose from "mongoose"; // Import mongoose to check if prod.prodId is a valid ObjectId
 
 const page = async ({ params }) => {
@@ -77,13 +76,13 @@ const page = async ({ params }) => {
         <p className="text-2xl text-red-600 font-bold">
           Invalid URL. Please try again.
         </p>
-        <Link
+        <a
           href="/dashboard"
           passHref
           className="text-blue-500 hover:underline block mt-2"
         >
           Go Back to Dashboard
-        </Link>
+        </a>
       </div>
     );
   }
@@ -108,12 +107,12 @@ const page = async ({ params }) => {
                     className="p-3 w-auto h-auto"
                   />
                   <div className="p-4">
-                    <Link
+                    <a
                       href={`/products/${product.productId}`}
                       className="text-xl font-semibold mb-2"
                     >
                       {product.name}
-                    </Link>
+                    </a>
                     <p className="text-gray-600 mb-4">
                       Quantity: {prod.quantity}
                     </p>
@@ -133,7 +132,7 @@ const page = async ({ params }) => {
       </div>
 
       <div className="flex items-center justify-center pt-4">
-        <Link href="/dashboard">Go back to dashboard</Link>
+        <a href="/dashboard">Go back to dashboard</a>
       </div>
     </div>
   );

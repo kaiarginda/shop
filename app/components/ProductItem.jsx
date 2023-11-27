@@ -2,7 +2,6 @@
 import React, { createContext, useContext } from "react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import Link from "next/link";
 const ProductItem = ({ product }) => {
   return (
     <div className="bg-gray-900 text-white p-2 rounded-lg shadow-md max-w-xs mx-auto mb-4">

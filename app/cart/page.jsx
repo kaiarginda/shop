@@ -4,7 +4,6 @@ import { connectMongoDB } from "../mongodb";
 import { cookies } from "next/headers";
 import { verify } from "jsonwebtoken";
 import AddToCart from "../components/AddToCart";
-import Link from "next/link";
 const page = ({ searchParams }) => {
   // await connectMongoDB();
   const cookieStore = cookies();
@@ -17,7 +16,7 @@ const page = ({ searchParams }) => {
           You Are Not Logged In{" "}
         </h1>
         <p className="text-blue-500">
-          <Link href="/login">Log In</Link>
+          <a href="/login">Log In</a>
         </p>
         {/* <AddToCart /> */}
       </div>

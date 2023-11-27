@@ -25,7 +25,6 @@
 
 // export default Page;
 import React from "react";
-import Link from "next/link";
 
 const Page = () => {
   return (
@@ -45,7 +44,7 @@ const Page = () => {
         </p>
       </div>
       <div className="flex justify-center items-center">
-        <Link href="/dashboard">Go back to dashboard</Link>
+        <a href="/dashboard">Go back to dashboard</a>
       </div>
     </div>
   );

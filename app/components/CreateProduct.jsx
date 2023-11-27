@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ThreeDots } from "react-loader-spinner";
 const Img = ({ author }) => {
@@ -124,12 +123,12 @@ const Img = ({ author }) => {
         </div>
       </form>
       <div className="flex justify-center items-center">
-        <Link
+        <a
           href="/dashboard"
           className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 focus:outline-none focus:ring focus:ring-indigo-200"
         >
           Go Back To Dashboard
-        </Link>
+        </a>
       </div>
     </div>
   );

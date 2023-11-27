@@ -4,7 +4,6 @@ import { verify } from "jsonwebtoken";
 import Nav from "../components/Nav";
 import ProductsList from "../components/ProductsList";
 import HeroPage from "../components/HeroPage";
-import Link from "next/link";
 import RenderHello from "../components/RenderHello";
 import { connectMongoDB } from "../mongodb";
 const page = async () => {
@@ -17,7 +16,7 @@ const page = async () => {
           No user found. Please try again.
         </h1>
         <p className="text-blue-500">
-          <Link href="/login">Try Again</Link>
+          <a href="/login">Try Again</a>
         </p>
       </div>
     );

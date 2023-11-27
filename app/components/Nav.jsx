@@ -89,7 +89,6 @@ import React from "react";
 import { FaSearch, FaShoppingCart, FaUser } from "react-icons/fa";
 import { FaSignOutAlt } from "react-icons/fa";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 import { SiFoursquarecityguide } from "react-icons/si";
 const Nav = ({ user }) => {
   const router = useRouter();
@@ -130,15 +129,15 @@ const Nav = ({ user }) => {
               <FaSearch className="text-gray-500" />
             </button>
           </div> */}
-          <Link
+          <a
             href="/website-guide"
             className="text-blue-500 hover:text-blue-600 flex gap-3 items-center justify-center"
           >
             <SiFoursquarecityguide className="ml-1" />
             Website Guide
-          </Link>
+          </a>
 
-          <Link
+          <a
             href={{
               pathname: "/cart",
               query: data,
@@ -151,7 +150,7 @@ const Nav = ({ user }) => {
               <FaShoppingCart className="text-2xl" />
               <span>Cart</span>
             </button>
-          </Link>
+          </a>
           {user ? (
             <div
               className="flex cursor-pointer items-center space-x-2"
@@ -164,9 +163,9 @@ const Nav = ({ user }) => {
           <button className="flex items-center space-x-2">
             <FaUser className="text-2xl" />
             <span>
-              <Link href={user ? `/user/${user.username}` : "/login"}>
+              <a href={user ? `/user/${user.username}` : "/login"}>
                 {user ? user.username : "Log In / Register"}
-              </Link>
+              </a>
             </span>
           </button>
         </div>

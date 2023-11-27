@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import React from "react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 const AddToCart = (user) => {
   const [checkoutPrice, setCheckoutPrice] = useState(0);
@@ -167,12 +166,12 @@ const AddToCart = (user) => {
         >
           Checkout
         </button>
-        <Link
+        <a
           href="/dashboard"
           className="text-blue-500 hover:underline hover:text-blue-700 transition duration-300"
         >
           Go Back To Dashboard
-        </Link>
+        </a>
       </div>
     </div>
   );

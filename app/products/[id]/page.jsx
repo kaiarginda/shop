@@ -2,7 +2,6 @@ import { connect } from "http2";
 import { connectMongoDB } from "../../mongodb";
 import React from "react";
 import Product from "../../models/Product";
-import Link from "next/link";
 import CommentInput from "../../components/CommentInput";
 import CommentList from "../../components/CommentList";
 import { cookies } from "next/headers";
@@ -53,12 +52,12 @@ const page = async ({ params }) => {
 
         {/* Product Description */}
 
-        <Link
+        <a
           className="text-blue-500 hover:text-blue-600 font-semibold text-lg"
           href="/"
         >
           Go Back To Dashboard
-        </Link>
+        </a>
         {/* <CommentInput postID={id} author={user.username} /> */}
       </div>
     );
@@ -80,8 +79,7 @@ const page = async ({ params }) => {
             ${product.price}
           </p>
           <h1 className="text-4xl font-semibold">
-            Seller:{" "}
-            <Link href={`/user/${product.author}`}>{product.author}</Link>
+            Seller: <a href={`/user/${product.author}`}>{product.author}</a>
           </h1>
         </div>
 

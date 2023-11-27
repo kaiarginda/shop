@@ -2,7 +2,6 @@
 import { useState } from "react";
 import React from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 const UserPage = ({ user, loggedUser }) => {
   const router = useRouter();
   const [showModal, setShowModal] = useState(false);
@@ -89,9 +88,9 @@ const UserPage = ({ user, loggedUser }) => {
             <h2 className="text-xl font-semibold mb-4">{modalTitle}</h2>
             <ul>
               {modalList.map((item) => (
-                <Link href={`/user/${item}`} key={item}>
+                <a href={`/user/${item}`} key={item}>
                   {item}
-                </Link>
+                </a>
               ))}
             </ul>
             <button

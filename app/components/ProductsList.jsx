@@ -4,7 +4,6 @@ import React, { createContext, useContext } from "react";
 import ProductItem from "./ProductItem";
 import { useState, useEffect } from "react";
 import { FaCartPlus } from "react-icons/fa";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Oval } from "react-loader-spinner";
 
@@ -83,13 +82,13 @@ const ProductsList = () => {
         </button>
 
         <div className="mt-4 flex justify-center items-center">
-          <Link href="/cart" className="flex gap-3 items-center">
+          <a href="/cart" className="flex gap-3 items-center">
             <FaCartPlus
               className="text-4xl text-blue-500 hover:text-blue-600 cursor-pointer"
               onClick={cartSubmitHandler}
             />
             <span className="text-white text-3xl">{items}</span>
-          </Link>
+          </a>
         </div>
       </div>
 
@@ -198,7 +197,7 @@ const ProductsList = () => {
                 </div>
                 <h4 className="text-lg text-gray-500 pt-2">
                   Product Seller:{" "}
-                  <Link href={`/user/${product.author}`}>{product.author}</Link>
+                  <a href={`/user/${product.author}`}>{product.author}</a>
                 </h4>
                 <h3 className="text-lg font-semibold mt-2">{product.name}</h3>
                 <p className="text-gray-400 text-sm line-clamp-3 h-16">
