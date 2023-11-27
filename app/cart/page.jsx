@@ -4,8 +4,8 @@ import { connectMongoDB } from "../mongodb";
 import { cookies } from "next/headers";
 import { verify } from "jsonwebtoken";
 import AddToCart from "../components/AddToCart";
-const page = ({ searchParams }) => {
-  // await connectMongoDB();
+const page = async ({ searchParams }) => {
+  await connectMongoDB();
   const cookieStore = cookies();
   const token = cookieStore.get("OutSideJWT");
 
