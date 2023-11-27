@@ -6,7 +6,9 @@ import { verify } from "jsonwebtoken";
 import UserProducts from "../../components/UserProducts";
 import { cookies } from "next/headers";
 import Product from "@/app/models/Product";
+import { connectMongoDB } from "@/app/mongodb";
 const Page = async ({ params }) => {
+  await connectMongoDB();
   const { username } = params;
   const user = await User.findOne({ username });
   const products = await Product.find({ author: username });
