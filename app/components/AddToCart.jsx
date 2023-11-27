@@ -4,8 +4,8 @@ import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import React from "react";
 import { useRouter } from "next/navigation";
 const AddToCart = (user) => {
-  if (!user.name) return;
   const [checkoutPrice, setCheckoutPrice] = useState(0);
+  if (!user.name) return;
   const router = useRouter();
   const data = localStorage?.getItem("products");
   const productData = JSON.parse(data);
