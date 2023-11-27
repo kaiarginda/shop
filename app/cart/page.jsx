@@ -80,10 +80,9 @@ import React from "react";
 import { cookies } from "next/headers";
 import { verify } from "jsonwebtoken";
 import AddToCart from "../components/AddToCart";
-const page = () => {
-  const cookieStore = cookies();
-  const token = cookieStore.get("OutSideJWT");
-  console.log("cookie");
+const page = async () => {
+  const cookieStore = await cookies();
+  const token = await cookieStore.get("OutSideJWT");
   if (!token) {
     return (
       <div className="text-center">

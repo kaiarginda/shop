@@ -59,7 +59,6 @@ const ProductsList = () => {
       localStorage.setItem("products", JSON.stringify(cart));
     }
   };
-  console.log(productData, "prdata");
   return (
     <div className="container mx-auto p-4">
       <div className="bg-gray-800 p-4 rounded-lg shadow-md mb-4">
