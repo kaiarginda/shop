@@ -83,7 +83,7 @@ import AddToCart from "../components/AddToCart";
 const page = () => {
   const cookieStore = cookies();
   const token = cookieStore.get("OutSideJWT");
-
+  console.log("cookie");
   if (!token) {
     return (
       <div className="text-center">
