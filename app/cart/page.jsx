@@ -99,7 +99,7 @@ const page = () => {
     const user = verify(token.value, "secret");
     return (
       <div>
-        <AddToCart user={{ user }} />
+        <AddToCart user={user} />
       </div>
     );
   }
