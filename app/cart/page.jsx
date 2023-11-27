@@ -33,10 +33,8 @@
 // };
 
 // export default page;
-
+"use client";
 import React, { useEffect, useState } from "react";
-import CardComponent from "../components/CardComponent";
-import { connectMongoDB } from "../mongodb";
 import { cookies } from "next/headers";
 import { verify } from "jsonwebtoken";
 import AddToCart from "../components/AddToCart";
@@ -48,7 +46,6 @@ const Page = ({ searchParams }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        await connectMongoDB();
         const cookieStore = cookies();
         const token = cookieStore.get("OutSideJWT");
 
