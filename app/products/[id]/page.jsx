@@ -27,8 +27,7 @@ const page = async ({ params }) => {
               ${product.price}
             </p>
             <h1 className="text-4xl font-semibold">
-              Seller:{" "}
-              <Link href={`/user/${product.author}`}>{product.author}</Link>
+              Seller: <a href={`/user/${product.author}`}>{product.author}</a>
             </h1>
           </div>
 
