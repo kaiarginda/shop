@@ -80,52 +80,30 @@ import React from "react";
 import { cookies } from "next/headers";
 import { verify } from "jsonwebtoken";
 import AddToCart from "../components/AddToCart";
-
-let hasCheckedUser = false;
-let loggedIn = false;
-let user = null;
-
-const checkUserLoggedIn = () => {
-  if (!hasCheckedUser) {
-    const cookieStore = cookies();
-    const token = cookieStore.get("OutSideJWT");
-
-    if (token) {
-      try {
-        user = verify(token.value, "secret");
-        loggedIn = true;
-      } catch (error) {
-        console.error("Error verifying token:", error);
-      }
-    }
-
-    hasCheckedUser = true;
-  }
-
-  return { loggedIn, user };
-};
-
 const page = () => {
-  const { loggedIn, user } = checkUserLoggedIn();
+  const cookieStore = cookies();
+  const token = cookieStore.get("OutSideJWT");
 
-  if (!loggedIn) {
-    return (
-      <div className="text-center">
-        <h1 className="text-3xl font-bold text-red-500 p-4">
-          You Are Not Logged In{" "}
-        </h1>
-        <p className="text-blue-500">
-          <a href="/login">Log In</a>
-        </p>
-      </div>
-    );
-  } else {
-    return (
-      <div>
-        <AddToCart user={user} />
-      </div>
-    );
-  }
+  const user = verify(token.value, "secret");
+  return (
+    <div>
+      <AddToCart user={user} />
+    </div>
+  );
+
+  // if (!token) {
+  //   return (
+  //     <div className="text-center">
+  //       <h1 className="text-3xl font-bold text-red-500 p-4">
+  //         You Are Not Logged In{" "}
+  //       </h1>
+  //       <p className="text-blue-500">
+  //         <a href="/login">Log In</a>
+  //       </p>
+  //     </div>
+  //   );
+  // } else {
+  // }
 };
 
 export default page;
