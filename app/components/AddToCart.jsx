@@ -349,6 +349,7 @@
 // };
 
 // export default AddToCart;
+
 "use client";
 import { useState, useEffect } from "react";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
@@ -400,6 +401,10 @@ const AddToCart = (user) => {
     );
   };
 
+  useEffect(() => {
+    setCheckoutPrice(calculateTotalPrice());
+  }, [checkoutData]);
+
   const minusHandler = (product) => {
     let storedArray = JSON.parse(localStorage.getItem("products"));
     const indexToDelete = storedArray.findIndex(
@@ -419,11 +424,6 @@ const AddToCart = (user) => {
     localStorage.setItem("products", JSON.stringify(storedArray));
     router.refresh();
   };
-
-  // Calculate checkout price using useEffect to avoid multiple re-renders
-  useEffect(() => {
-    setCheckoutPrice(calculateTotalPrice());
-  }, [checkoutData]);
 
   const handleSubscription = (e) => {
     e.preventDefault();
