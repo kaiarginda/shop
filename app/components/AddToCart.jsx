@@ -349,13 +349,12 @@
 // };
 
 // export default AddToCart;
-
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { useRouter } from "next/navigation";
 
-const AddToCart = (user) => {
+const AddToCart = ({ user }) => {
   const [checkoutPrice, setCheckoutPrice] = useState(0);
   const router = useRouter();
   const data = localStorage?.getItem("products");
@@ -363,11 +362,14 @@ const AddToCart = (user) => {
 
   if (!productData) {
     return (
-      <div class="bg-white p-8 rounded-lg shadow-lg text-center">
-        <p class="text-xl text-gray-700">
+      <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+        <p className="text-xl text-gray-700">
           There Are No Items In The Cart. Add Items To Checkout.
         </p>
-        <a href="/dashboard" class="text-blue-500 hover:underline mt-4 block">
+        <a
+          href="/dashboard"
+          className="text-blue-500 hover:underline mt-4 block"
+        >
           Go Back To Dashboard
         </a>
       </div>
@@ -400,10 +402,6 @@ const AddToCart = (user) => {
       0
     );
   };
-
-  useEffect(() => {
-    setCheckoutPrice(calculateTotalPrice());
-  }, [checkoutData]);
 
   const minusHandler = (product) => {
     let storedArray = JSON.parse(localStorage.getItem("products"));
@@ -449,6 +447,9 @@ const AddToCart = (user) => {
       return;
     }
   };
+
+  // Calculate total price without useEffect
+  setCheckoutPrice(calculateTotalPrice());
 
   return (
     <div>
@@ -499,7 +500,7 @@ const AddToCart = (user) => {
 
       <div className="flex items-center justify-between mb-4 p-4">
         <h1 className="text-2xl font-bold text-blue-500">
-          {calculateTotalPrice().toLocaleString("en-US", {
+          {checkoutPrice.toLocaleString("en-US", {
             style: "currency",
             currency: "USD",
           })}
