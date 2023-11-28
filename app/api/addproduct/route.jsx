@@ -5,4 +5,6 @@ export async function POST(req) {
   if (body) {
     await Product.create({ ...body });
   }
+
+  return new Response("response");
 }
