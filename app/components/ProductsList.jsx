@@ -21,6 +21,7 @@ const ProductsList = () => {
       .then((res) => res.json())
       .then((data) => {
         setLoading(false);
+        console.log(data, "data fr mad going");
         setProductData(data);
       })
       .catch((error) => {

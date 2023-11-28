@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ThreeDots } from "react-loader-spinner";
-const Img = ({ author }) => {
+const CreateProduct = ({ author }) => {
   const router = useRouter();
   const [image, setImage] = useState("");
   const [name, setName] = useState("");
@@ -137,4 +137,4 @@ const Img = ({ author }) => {
   );
 };
 
-export default Img;
+export default CreateProduct;

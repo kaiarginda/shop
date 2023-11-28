@@ -7,7 +7,7 @@ import UserProducts from "../../components/UserProducts";
 import { cookies } from "next/headers";
 import Product from "@/app/models/Product";
 import { connectMongoDB } from "@/app/mongodb";
-const Page = async ({ params }) => {
+const page = async ({ params }) => {
   await connectMongoDB();
   const { username } = params;
   const user = await User.findOne({ username });
@@ -46,4 +46,4 @@ const Page = async ({ params }) => {
   );
 };
 
-export default Page;
+export default page;
