@@ -17,17 +17,32 @@ const ProductsList = () => {
   useEffect(async () => {
     setLoading(true);
 
-    await fetch("/api/getproducts")
-      .then((res) => res.json())
-      .then((data) => {
-        setLoading(false);
-        console.log(data, "data fr mad going");
-        setProductData(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching products:", error);
-        setLoading(false);
-      });
+    // await fetch("/api/getproducts")
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     setLoading(false);
+    //     console.log(data, "data fr mad going");
+    //     setProductData(data);
+    //   })
+    //   .catch((error) => {
+    //     console.error("Error fetching products:", error);
+    //     setLoading(false);
+    //   });
+    try {
+      const response = await fetch("/api/getproducts");
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log(data, "data fr mad going");
+      setProductData(data);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+      setLoading(false);
+    }
   }, []);
   console.log(productData);
   const [visibleProducts, setVisibleProducts] = useState(999);
