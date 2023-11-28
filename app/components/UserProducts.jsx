@@ -16,6 +16,7 @@ const UserProducts = ({ products, loggedUser, user }) => {
       method: "DELETE",
       body: JSON.stringify({ product: products[i] }),
     });
+    await fetch("/api/getproducts");
 
     setDeleteLoading(false);
     setDeleteId("");

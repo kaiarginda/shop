@@ -55,6 +55,9 @@ const CreateProduct = ({ author }) => {
       }),
     });
 
+    const data = await fetch("/api/getproducts");
+    const text = await data.json();
+    console.log("product prdct", text);
     setName("");
     setPrice("");
     setImage("");

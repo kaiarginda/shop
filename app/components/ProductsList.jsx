@@ -241,6 +241,7 @@
 // export default ProductsList;
 
 // Import statements
+
 "use client";
 import React, { useState, useEffect } from "react";
 import { FaCartPlus } from "react-icons/fa";
@@ -257,10 +258,10 @@ const ProductsList = () => {
 
   const router = useRouter();
 
+  let info = [];
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
-
       try {
         const response = await fetch("/api/getproducts");
 
@@ -271,6 +272,7 @@ const ProductsList = () => {
         const data = await response.json();
         setProductData(data);
         setLoading(false);
+        info = data;
       } catch (error) {
         console.error("Error fetching products:", error);
         setLoading(false);
