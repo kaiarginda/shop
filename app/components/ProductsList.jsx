@@ -29,7 +29,7 @@ const ProductsList = () => {
       });
   }, []);
 
-  const [visibleProducts, setVisibleProducts] = useState(6);
+  const [visibleProducts, setVisibleProducts] = useState(999);
 
   const loadMoreProducts = () => {
     setVisibleProducts((prevVisible) => prevVisible + 3);
