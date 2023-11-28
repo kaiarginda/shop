@@ -14,10 +14,10 @@ const ProductsList = () => {
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
 
-  useEffect(() => {
+  useEffect(async () => {
     setLoading(true);
 
-    fetch("/api/getproducts")
+    await fetch("/api/getproducts")
       .then((res) => res.json())
       .then((data) => {
         setLoading(false);
