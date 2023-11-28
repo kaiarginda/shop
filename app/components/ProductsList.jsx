@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { Oval } from "react-loader-spinner";
 
 const ProductsList = () => {
-  const router = useRouter();
+  //  const router = useRouter();
   const [productData, setProductData] = useState([]);
   const [cart, setCart] = useState([]);
   const [items, setItems] = useState("");
@@ -17,17 +17,6 @@ const ProductsList = () => {
   useEffect(async () => {
     setLoading(true);
 
-    // await fetch("/api/getproducts")
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     setLoading(false);
-    //     console.log(data, "data fr mad going");
-    //     setProductData(data);
-    //   })
-    //   .catch((error) => {
-    //     console.error("Error fetching products:", error);
-    //     setLoading(false);
-    //   });
     try {
       const response = await fetch("/api/getproducts");
 
@@ -36,7 +25,6 @@ const ProductsList = () => {
       }
 
       const data = await response.json();
-      console.log(data, "data fr mad going");
       setProductData(data);
       setLoading(false);
     } catch (error) {
@@ -44,7 +32,7 @@ const ProductsList = () => {
       setLoading(false);
     }
   }, []);
-  console.log(productData);
+  // console.log(productData);
   const [visibleProducts, setVisibleProducts] = useState(999);
 
   const loadMoreProducts = () => {
