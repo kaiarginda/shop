@@ -7,13 +7,17 @@ import CommentList from "../../components/CommentList";
 import { cookies } from "next/headers";
 import { verify } from "jsonwebtoken";
 const page = async ({ params }) => {
-  return <div>{params.id}</div>;
+  const product = await Product.findOne({ productId: params.id });
+  return (
+    <div>
+      {params.id} : {product.name}
+    </div>
+  );
 };
 
 export default page;
 /*
   const { id } = params;
-  const product = await Product.findOne({ productId: id });
   console.log(product, "product");
   const cookieStore = cookies();
   const token = cookieStore.get("OutSideJWT");
