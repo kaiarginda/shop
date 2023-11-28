@@ -28,7 +28,7 @@ const ProductsList = () => {
         setLoading(false);
       });
   }, []);
-
+  console.log(productData);
   const [visibleProducts, setVisibleProducts] = useState(999);
 
   const loadMoreProducts = () => {
