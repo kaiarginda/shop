@@ -9,7 +9,7 @@ import { verify } from "jsonwebtoken";
 const page = async ({ params }) => {
   const { id } = params;
   const product = await Product.findOne({ productId: id });
-
+  console.log(product, "product");
   const cookieStore = cookies();
   const token = cookieStore.get("OutSideJWT");
   if (!token || !token.value) {
@@ -63,7 +63,7 @@ const page = async ({ params }) => {
   }
 
   const user = verify(token.value, "secret");
-
+  console.log(user, "user for real tho");
   return (
     <div className="bg-gray-900 text-white p-4 mx-auto   shadow-md w-[100%] h-[100%]">
       <div className="grid grid-cols-12 gap-8 pb-4">
