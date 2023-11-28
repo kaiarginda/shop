@@ -19,6 +19,7 @@ export async function GET() {
 
     return new Response(JSON.stringify(products));
   } finally {
-    await closeMongoDB(); // Make sure to close the database connection
+    // await closeMongoDB(); // Make sure to close the database connection
+    return;
   }
 }
