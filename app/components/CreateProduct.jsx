@@ -40,7 +40,7 @@ const Img = ({ author }) => {
       return;
     }
     setSubmitLoading(true);
-    await fetch("/api/addproduct/", {
+    await fetch("/api/addproduct", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
