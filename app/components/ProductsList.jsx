@@ -254,7 +254,7 @@ const ProductsList = () => {
   const [items, setItems] = useState("");
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
-  const [visibleProducts, setVisibleProducts] = useState(999);
+  const [visibleProducts, setVisibleProducts] = useState(6);
 
   const router = useRouter();
 

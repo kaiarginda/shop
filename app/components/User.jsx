@@ -86,7 +86,7 @@ const UserPage = ({ user, loggedUser }) => {
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-40">
           <div className="bg-white w-96 p-4 rounded-lg shadow-lg">
             <h2 className="text-xl font-semibold mb-4">{modalTitle}</h2>
-            <ul>
+            <ul className="flex flex-col">
               {modalList.map((item) => (
                 <a href={`/user/${item}`} key={item}>
                   {item}
