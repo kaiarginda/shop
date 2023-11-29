@@ -263,13 +263,21 @@ const ProductsList = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await fetch("/api/getproducts");
+        // const response = await fetch("/api/getproducts");
+        const response = await fetch("/api/getproducts", {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify({ age: "123" }),
+        });
 
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
         const data = await response.json();
+        console.log(data, "going mad bruv ");
         setProductData(data);
         setLoading(false);
         info = data;

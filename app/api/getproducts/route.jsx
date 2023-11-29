@@ -22,3 +22,11 @@ export async function GET() {
     return new Response({});
   }
 }
+
+export async function POST(req) {
+  await connectMongoDB();
+  const body = req.body;
+
+  const products = await Product.find({});
+  return new Response(JSON.stringify(products));
+}
